@@ -131,7 +131,7 @@ export async function POST(request: NextRequest) {
 
     await sheets.spreadsheets.values.append({
       spreadsheetId: sheetId,
-      range: "Sheet1!A:I",
+      range: "Blad1!A:I",
       valueInputOption: "RAW",
       requestBody: {
         values: [
