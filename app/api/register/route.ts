@@ -44,7 +44,7 @@ async function sendConfirmationEmail({
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      from: "no-replay@beholdconf.se",
+      from: "info@beholdconf.se",
       to: [email.trim().toLowerCase()],
       subject: "Tack för din anmälan till BEHOLD",
       text: [
@@ -53,7 +53,7 @@ async function sendConfirmationEmail({
         "Tack för din anmälan till BEHOLD.",
         "",
         "Vi ser fram emot att fira dagen tillsammans med dig.",
-        "Följ oss gärna på Instagram @beholdconf där bland annat schema och annan info kommer att lanseras inför heldagen.",
+        "Följ oss gärna på Instagram @behold.conf där bland annat schema och annan info kommer att lanseras inför heldagen.",
         "",
         "Vi ses den 2 maj 2026.",
         "",
@@ -67,7 +67,7 @@ async function sendConfirmationEmail({
             <p style="margin: 0 0 16px; line-height: 1.7;">Hej ${recipientName}!</p>
             <p style="margin: 0 0 16px; line-height: 1.7;">Tack för din anmälan till BEHOLD. Vi ser fram emot att fira dagen tillsammans med dig.</p>
             <p style="margin: 0 0 16px; line-height: 1.7;">
-              Följ oss gärna på Instagram <strong>@beholdconf</strong> där bland annat schema och annan info kommer att lanseras inför heldagen.
+              Följ oss gärna på Instagram <strong>@behold.conf</strong> där bland annat schema och annan info kommer att lanseras inför heldagen.
             </p>
             <p style="margin: 24px 0 0; color: #b9b2b4; line-height: 1.7;">Vi ses den 2 maj 2026.</p>
           </div>
