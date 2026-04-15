@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/behold-link-preview.jpg",
+        url: "/og-image.jpg",
         width: 915,
         height: 1144,
         alt: "BEHOLD heldagskonferens 2 maj 2026",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     title: "BEHOLD — Jag gör något nytt",
     description:
       "Heldagskonferens 2 maj 2026 · Sollentuna, Stockholm. Se, jag gör något nytt.",
-    images: ["/behold-link-preview.jpg"],
+    images: ["/og-image.jpg"],
   },
 };
 
