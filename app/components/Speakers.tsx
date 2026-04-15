@@ -9,7 +9,7 @@ const speakers = [
     image: "/speaker-simon.jpg",
     color: "#FF6A00",
     description:
-      "Simon är artist och talare som har gått från elitinnebandy till att hans musik och personliga berättelser om ett liv med Jesus idag ger unga människor hopp, tro och mod. Samtidigt har hans musik fått stor spridning på Spotify, TikTok och sociala medier. 2024 blev han bl.a. den första hiphopartisten att få årets Utbultstipendium, och senast nu under påsken arrangerade han väckelsekonserten \"LA DOLCE VITA CONCERT\".",
+      "Simon är artist och talare som spelar innebandy på elitnivå samtidigt som musik han släppt och personliga berättelser om ett liv med Jesus fortsatt ge unga människor hopp och tro. Hans musik har fått stor spridning på Spotify, TikTok och sociala medier, och 2024 blev han bl.a. den första hiphopartisten att få årets Utbultstipendium. Senast nu under påsken arrangerade han väckelsekonserten \"LA DOLCE VITA CONCERT\" i Solna.",
   },
   {
     name: "Daniel Norrby",
@@ -17,7 +17,7 @@ const speakers = [
     image: "/speaker-daniel.jpg",
     color: "#E83010",
     description:
-      "Daniel kommer från att ha spelat på hög nivå i fotbollsvärlden till att ha blivit en av initiativtagarna bakom Jesus Conference - en av Sveriges största kristna konferenser för unga vuxna, är med och producerar Jesus Podcast och studerar till pastor på ALT. Han brinner för att se människor hitta sin identitet i Jesus med ett tydligt fokus på att hjälpa unga människor att leva frimodigt och praktiskt i sin tro.",
+      "Daniel kommer från att ha spelat på hög nivå i fotbollsvärlden till att ha blivit en av initiativtagarna bakom Jesus Conference - en av Sveriges största kristna konferenser för unga vuxna - samtidigt som han är med och producerar Jesus Podcast och studerar till pastor på ALT. Han brinner för att se människor hitta sin identitet i Jesus med ett tydligt fokus på att hjälpa unga människor att leva frimodigt och praktiskt i sin tro.",
   },
   {
     name: "Aaron Lindström",
