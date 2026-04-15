@@ -1,43 +1,55 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState, type CSSProperties } from "react";
 
 const speakers = [
   {
-    name: "Ebenezer Haregot",
-    role: "Host",
-    image: "/speaker-ebenezer.png",
-    color: "#FF3B1F",
-    description:
-      "Ebenezer leder dagen som host och finns med för att knyta ihop konferensen och bära visionen för BEHOLD.",
-  },
-  {
     name: "Simon Möller",
     role: "Talare + artist",
-    image: "/speaker-simon.png",
+    image: "/speaker-simon.jpg",
     color: "#FF6A00",
     description:
-      "Simon medverkar under dagen med både musik och undervisning, med hjärta för att människor ska få möta Gud på nytt.",
+      "Simon är artist och talare som har gått från elitinnebandy till att hans musik och personliga berättelser om ett liv med Jesus idag ger unga människor hopp, tro och mod. Samtidigt har hans musik fått stor spridning på Spotify, TikTok och sociala medier. 2024 blev han bl.a. den första hiphopartisten att få årets Utbultstipendium, och senast nu under påsken arrangerade han väckelsekonserten \"LA DOLCE VITA CONCERT\".",
   },
   {
     name: "Daniel Norrby",
     role: "Talare",
-    image: "/speaker-daniel.png",
+    image: "/speaker-daniel.jpg",
     color: "#E83010",
     description:
-      "Daniel talar under konferensen och delar undervisning som vill uppmuntra, utmana och rikta blicken mot Jesus.",
+      "Daniel kommer från att ha spelat på hög nivå i fotbollsvärlden till att ha blivit en av initiativtagarna bakom Jesus Conference - en av Sveriges största kristna konferenser för unga vuxna, är med och producerar Jesus Podcast och studerar till pastor på ALT. Han brinner för att se människor hitta sin identitet i Jesus med ett tydligt fokus på att hjälpa unga människor att leva frimodigt och praktiskt i sin tro.",
+  },
+  {
+    name: "Aaron Lindström",
+    role: "Talare",
+    image: "/speaker-aaron.jpg",
+    color: "#FF3B1F",
+    description:
+      "Aaron är idag en av Sveriges största talanger inom para-alpin skidåkning och ett av Sveriges stora medaljhopp. Utöver att ha tagit ett VM-brons i OS för paraidrottare och representerat Sverige i tre Paralympics så är han öppen med sin kristna tro och brinner för att visa att identitet och värde inte sitter i prestation.",
   },
   {
     name: "Lovsångskväll med Team från Eskilstuna",
     role: "Lovsång",
-    image: "/speaker-eskilstuna.png",
+    image: "/speaker-eskilstuna.jpg",
     color: "#FF3B1F",
     description:
-      "Teamet från Eskilstuna leder lovsångsgudstjänsten som avslutar dagen i tillbedjan, förväntan och gemenskap.",
+      "Vi kommer avsluta dagen med en lovsångsgudstjänst ledd av team från Eskilstuna. De kommer med en stark längtan efter att människor ska få möta Jesus och har lett lovsång på allt ifrån lokala samlingar i Eskilstuna Pingst till ungdomssamlingar och konferenser/läger som Nyhems- och Hampeveckan.",
+  },
+  {
+    name: "Ebenezer Haregot",
+    role: "Host",
+    image: "/speaker-ebenezer.jpg",
+    color: "#FF3B1F",
+    description:
+      "Ebenezer, ibland mer känd som Ebo, är Ungdoms- och Unga Vuxna-pastor i Sollentuna Pingst och tillsammans med team är värd för denna heldagskonferens. Han brinner för att se unga människor få upptäcka sin Gudagivna potential genom livsförvandlande möten med Jesus.",
   },
 ];
 
 export default function Speakers() {
+  const [activeSpeaker, setActiveSpeaker] = useState<string | null>(null);
+  const [hoveredSpeaker, setHoveredSpeaker] = useState<string | null>(null);
+  const openSpeaker = hoveredSpeaker ?? activeSpeaker;
+
   return (
     <section
       id="speakers"
@@ -130,8 +142,14 @@ export default function Speakers() {
           gap: "24px",
           marginBottom: "32px",
         }}>
-          {speakers.map((speaker, i) => (
-            <SpeakerCard key={speaker.name} speaker={speaker} index={i} />
+          {speakers.map((speaker) => (
+            <SpeakerCard
+              key={speaker.name}
+              speaker={speaker}
+              isOpen={openSpeaker === speaker.name}
+              onToggle={() => setActiveSpeaker((current) => current === speaker.name ? null : speaker.name)}
+              onHoverChange={(isHovered) => setHoveredSpeaker(isHovered ? speaker.name : null)}
+            />
           ))}
         </div>
 
@@ -164,11 +182,11 @@ export default function Speakers() {
               marginBottom: "18px",
             }}
           >
-            Dörrarna öppnas kl. 13.00 och heldagens första möte börjar kl. 13.30. Konferensen avslutas med en lovsångsgudstjänst ledd av team från Eskilstuna. Däremellan har vi olika sessions och middag på plats i området. Dagen beräknas sen vara helt klar omkring kl. 21.00.
+            Dörrarna för heldagen öppnas kl. 13.00. Under dagen kommer vi ha olika sessions, möten och konsert. Det kommer finnas möjlighet att köpa middag från food trucks på plats i området. Konferensen avslutas med en lovsångsgudstjänst ledd av team från Eskilstuna och beräknas vara klar som senast omkring kl. 22.00.
           </p>
 
           <a
-            href="https://instagram.com/beholdconf"
+            href="https://instagram.com/behold.conf"
             target="_blank"
             rel="noopener noreferrer"
             style={{
@@ -214,54 +232,143 @@ export default function Speakers() {
                 fontSize: "0.92rem",
               }}
             >
-              Följ oss på <span style={{ color: "var(--accent)", fontWeight: 600 }}>@beholdconf</span> för att snabbast få löpande uppdateringar inför heldagen!
+              Följ oss på <span style={{ color: "var(--accent)", fontWeight: 600 }}>@behold.conf</span> för att snabbast få löpande uppdateringar inför heldagen!
             </p>
           </a>
         </div>
       </div>
+      <style>{`
+        .speaker-card {
+          transition: box-shadow 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+        }
+
+        .speaker-image {
+          height: 360px;
+          transition: height 0.42s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .speaker-bio {
+          position: absolute;
+          inset: 0;
+          display: flex;
+          align-items: stretch;
+          opacity: 0;
+          overflow: hidden;
+          pointer-events: none;
+          transform: translateY(10px);
+          transition: opacity 0.32s ease, transform 0.42s cubic-bezier(0.22, 1, 0.36, 1), background 0.25s ease;
+          background: rgba(18,18,18,0.88);
+          backdrop-filter: grayscale(0.35) blur(2px);
+        }
+
+        .speaker-bio-content {
+          width: 100%;
+          max-height: 100%;
+          overflow-y: auto;
+          transform: translateY(8px);
+          transition: transform 0.42s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .speaker-card.is-open {
+          border-color: color-mix(in srgb, var(--speaker-color) 45%, transparent) !important;
+          box-shadow: 0 0 0 1px color-mix(in srgb, var(--speaker-color) 35%, transparent), 0 20px 60px rgba(0,0,0,0.5);
+          transform: translateY(-3px);
+        }
+
+        .speaker-card.is-open .speaker-bio {
+          opacity: 1;
+          transform: translateY(0);
+          background: rgba(20,20,20,0.9);
+        }
+
+        .speaker-card.is-open .speaker-bio-content {
+          transform: translateY(0);
+        }
+
+        .speaker-card.is-open.is-overflowing-bio .speaker-image {
+          height: var(--speaker-open-height);
+        }
+
+      `}</style>
     </section>
   );
 }
 
 function SpeakerCard({
   speaker,
-  index,
+  isOpen,
+  onToggle,
+  onHoverChange,
 }: {
   speaker: (typeof speakers)[0];
-  index: number;
+  isOpen: boolean;
+  onToggle: () => void;
+  onHoverChange: (isHovered: boolean) => void;
 }) {
-  const [isOpen, setIsOpen] = useState(false);
+  const bioContentRef = useRef<HTMLDivElement>(null);
+  const [bioOverflows, setBioOverflows] = useState(false);
+  const [openHeight, setOpenHeight] = useState(360);
+
+  useEffect(() => {
+    const measureOverflow = () => {
+      const bioContent = bioContentRef.current;
+      if (!bioContent) return;
+
+      const neededHeight = Math.ceil(bioContent.scrollHeight);
+      setBioOverflows(neededHeight > 360);
+      setOpenHeight(Math.min(Math.max(neededHeight, 360), 500));
+    };
+
+    measureOverflow();
+    window.addEventListener("resize", measureOverflow);
+
+    return () => window.removeEventListener("resize", measureOverflow);
+  }, [speaker.description]);
 
   return (
     <div
+      className={`speaker-card${isOpen ? " is-open" : ""}${bioOverflows ? " is-overflowing-bio" : ""}`}
       aria-label={`${speaker.name} – ${speaker.role}`}
+      aria-expanded={isOpen}
       data-speaker-name={speaker.name}
       data-speaker-role={speaker.role}
+      role="button"
+      tabIndex={0}
       style={{
         position: "relative",
+        zIndex: 2,
+        display: "block",
+        width: "100%",
+        padding: 0,
+        textAlign: "left",
         borderRadius: "var(--radius-lg)",
         overflow: "hidden",
         background: "var(--surface)",
         border: "1px solid var(--border)",
         cursor: "pointer",
-        transition: "box-shadow 0.25s, border-color 0.25s, transform 0.25s",
+        outline: "none",
+        "--speaker-color": speaker.color,
+        "--speaker-open-height": `${openHeight}px`,
+      } as CSSProperties}
+      onClick={onToggle}
+      onKeyDown={(event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          onToggle();
+        }
       }}
-      onClick={() => setIsOpen((prev) => !prev)}
-      onMouseEnter={(e) => {
-        setIsOpen(true);
-        (e.currentTarget as HTMLElement).style.boxShadow = `0 0 0 1px ${speaker.color}55, 0 20px 60px rgba(0,0,0,0.5)`;
-        (e.currentTarget as HTMLElement).style.borderColor = `${speaker.color}66`;
-        (e.currentTarget as HTMLElement).style.transform = "translateY(-3px)";
+      onPointerEnter={(event) => {
+        if (event.pointerType !== "touch") {
+          onHoverChange(true);
+        }
       }}
-      onMouseLeave={(e) => {
-        setIsOpen(false);
-        (e.currentTarget as HTMLElement).style.boxShadow = "none";
-        (e.currentTarget as HTMLElement).style.borderColor = "var(--border)";
-        (e.currentTarget as HTMLElement).style.transform = "translateY(0)";
+      onPointerLeave={(event) => {
+        if (event.pointerType !== "touch") {
+          onHoverChange(false);
+        }
       }}
     >
-      {/* Image */}
-      <div style={{ position: "relative", height: 360, overflow: "hidden", background: "var(--surface-2)" }}>
+      <div className="speaker-image" style={{ position: "relative", overflow: "hidden", background: "var(--surface-2)" }}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={speaker.image}
@@ -305,32 +412,40 @@ function SpeakerCard({
             {speaker.role}
           </p>
         </div>
-      </div>
 
-      <div
-        style={{
-          maxHeight: isOpen ? 220 : 0,
-          opacity: isOpen ? 1 : 0,
-          overflow: "hidden",
-          transition: "max-height 0.35s ease, opacity 0.25s ease",
-          borderTop: isOpen ? "1px solid rgba(255,255,255,0.08)" : "1px solid transparent",
-          background: "rgba(255,255,255,0.02)",
-        }}
-      >
         <div
-          style={{
-            padding: "18px 22px 22px",
-          }}
+          className="speaker-bio"
         >
-          <p
+          <div
+            ref={bioContentRef}
+            className="speaker-bio-content"
             style={{
-              color: "var(--text-muted)",
-              lineHeight: 1.7,
-              fontSize: "0.94rem",
+              padding: "24px",
             }}
           >
-            {speaker.description}
-          </p>
+            <p
+              style={{
+                fontFamily: "'Anton', sans-serif",
+                fontSize: "clamp(1.25rem, 2.2vw, 1.75rem)",
+                letterSpacing: "0.06em",
+                color: "var(--text)",
+                textTransform: "uppercase",
+                marginBottom: "12px",
+              }}
+            >
+              {speaker.name}
+            </p>
+            <p
+              style={{
+                color: "rgba(255,255,255,0.88)",
+                lineHeight: 1.65,
+                fontSize: "0.94rem",
+                whiteSpace: "pre-line",
+              }}
+            >
+              {speaker.description}
+            </p>
+          </div>
         </div>
       </div>
     </div>

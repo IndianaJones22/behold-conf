@@ -124,10 +124,10 @@ export default function Scripture() {
             lineHeight: 1.9,
             color: "var(--text-muted)",
             fontWeight: 300,
-            marginBottom: "3rem",
+            marginBottom: "2rem",
           }}
         >
-          Dagen är fylld med undervisning, lovsång och gemenskap - allt format kring ett enda budskap: se vad Gud vill göra. I dig. I oss. Just nu.
+          Dagen är fylld med undervisning, lovsång och gemenskap - allt format kring ett enda budskap: att se vad Gud vill göra. I dig. I oss. Just nu.
         </p>
 
         <p

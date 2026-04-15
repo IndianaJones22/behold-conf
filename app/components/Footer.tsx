@@ -113,7 +113,7 @@ export default function Footer() {
               color: "var(--text-muted)",
             }}
           >
-            SOLLENTUNA, STOCKHOLM
+            SOLLENTUNA PINGST, STOCKHOLM
           </span>
         </div>
 

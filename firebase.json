@@ -2,6 +2,7 @@
   "apphosting": {
     "backendId": "behold-conf-web",
     "rootDir": ".",
-    "region": "europe-west4"
+    "region": "europe-west4",
+    "alwaysDeployFromSource": true
   }
 }

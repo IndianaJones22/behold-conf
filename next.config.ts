@@ -1,6 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  allowedDevOrigins: ["172.20.10.3"],
   // googleapis@144 has a malformed JSDoc comment in its generated .d.ts files
   // that breaks Next.js 16's TypeScript checker even with skipLibCheck:true.
   // Our own TypeScript is fully typed — this only suppresses the third-party error.

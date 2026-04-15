@@ -17,11 +17,11 @@ const items = [
   },
   {
     q: "Finns det parkering i närheten?",
-    a: "Ja, smidigaste parkeringsplatsen är Helenelundsparkeringen, cirka 100 meter från kyrkan.",
+    a: "Ja, smidigaste parkeringsplatsen är Sollentunavallens parkering, cirka 100 meter från kyrkan.",
   },
   {
     q: "Hur tar jag mig dit med kollektivtrafik?",
-    a: "Smidigast är att ta buss 526 eller 528 från antingen Sollentuna station eller Helenelunds station. Båda bussarna går regelbundet från stationerna.",
+    a: "Antingen så kan du promenera ca 10 min ifrån Sollentuna station eller ta buss 607, 520, 525, 527, 627, 687 eller 955 från Sollentuna station och hoppa av två stationer senare vid Sofielundsskolan. Därifrån tar det 4 min att promenera.",
   },
   {
     q: "Kommer det finnas tolkning eller översättning?",
