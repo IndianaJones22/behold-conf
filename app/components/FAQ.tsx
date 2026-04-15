@@ -5,15 +5,15 @@ import { useState } from "react";
 const items = [
   {
     q: "Vad kostar heldagskonferensen?",
-    a: "Ingenting! Vi vill att sa manga som mojligt ska kunna ha mojlighet att vara med pa konferensen och att det ska vara sa enkelt som mojligt for dig att bjuda med vanner.",
+    a: "Ingenting! Vi vill att så många som möjligt ska kunna ha möjlighet att vara med på konferensen och att det ska vara så enkelt som möjligt för dig att bjuda med vänner.",
   },
   {
     q: "Kommer det finnas mat?",
-    a: "Till middagen sa kommer det finnas food trucks smidigt och lattillgangliga utanfor kyrkan. Under dagen kommer aven fika och enklare fortaring att erbjudas.",
+    a: "Till middagen så kommer det finnas food trucks smidigt och lättillgängliga utanför kyrkan. Under dagen kommer även fika och enklare förtäring att erbjudas.",
   },
   {
     q: "Vem är konferensen för?",
-    a: "Den är främst för ungdomar i gymnasiet och unga vuxna, men alla som längtar efter en plats att få möta Gud på nytt är välkommen att fira dagen tillsammans med oss.",
+    a: "Den är främst för ungdomar och unga vuxna, men alla som längtar efter en plats att få möta Gud på nytt är välkommen att fira dagen tillsammans med oss.",
   },
   {
     q: "Finns det parkering i närheten?",
