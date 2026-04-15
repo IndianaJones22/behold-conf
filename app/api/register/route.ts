@@ -50,12 +50,12 @@ async function sendConfirmationEmail({
       text: [
         `Hej ${recipientName}!`,
         "",
-        "Tack för din anmälan till BEHOLD.",
+        "Tack för din anmälan till BEHOLD. 😊",
         "",
-        "Vi ser fram emot att fira dagen tillsammans med dig.",
         "Följ oss gärna på Instagram @behold.conf där bland annat schema och annan info kommer att lanseras inför heldagen.",
         "",
-        "Vi ses den 2 maj 2026.",
+        "Vi ser fram emot att fira dagen tillsammans med dig! 👋",
+        "Ses den 2 maj 2026.",
         "",
         "Ebenezer Haregot",
         "Ungdoms- & Unga Vuxna-pastor",
@@ -67,11 +67,11 @@ async function sendConfirmationEmail({
             <p style="margin: 0 0 12px; color: #ff3b1f; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase;">BEHOLD</p>
             <h1 style="margin: 0 0 20px; font-size: 28px; line-height: 1.1;">Tack för din anmälan</h1>
             <p style="margin: 0 0 16px; line-height: 1.7;">Hej ${recipientName}!</p>
-            <p style="margin: 0 0 16px; line-height: 1.7;">Tack för din anmälan till BEHOLD. Vi ser fram emot att fira dagen tillsammans med dig.</p>
+            <p style="margin: 0 0 16px; line-height: 1.7;">Tack för din anmälan till BEHOLD. 😊</p>
             <p style="margin: 0 0 16px; line-height: 1.7;">
               Följ oss gärna på Instagram <a href="https://www.instagram.com/behold.conf/" style="color: #ff3b1f; font-weight: 700; text-decoration: none;">@behold.conf</a> där bland annat schema och annan info kommer att lanseras inför heldagen.
             </p>
-            <p style="margin: 24px 0 0; color: #b9b2b4; line-height: 1.7;">Vi ses den 2 maj 2026.</p>
+            <p style="margin: 24px 0 0; color: #b9b2b4; line-height: 1.7;">Vi ser fram emot att fira dagen tillsammans med dig! 👋<br />Ses den 2 maj 2026.</p>
             <div style="margin-top: 24px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.08); color: #f3eff0; line-height: 1.6;">
               <p style="margin: 0; font-weight: 700;">Ebenezer Haregot</p>
               <p style="margin: 0; color: #b9b2b4;">Ungdoms- &amp; Unga Vuxna-pastor</p>

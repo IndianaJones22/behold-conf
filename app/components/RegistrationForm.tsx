@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, FormEvent } from "react";
+import { useEffect, useRef, useState, FormEvent } from "react";
 
 type FormData = {
   firstName: string;
@@ -28,9 +28,18 @@ const initialData: FormData = {
 };
 
 export default function RegistrationForm() {
+  const sectionRef = useRef<HTMLElement | null>(null);
   const [form, setForm] = useState<FormData>(initialData);
   const [errors, setErrors] = useState<FieldError>({});
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+
+  useEffect(() => {
+    if (status !== "success") return;
+
+    window.requestAnimationFrame(() => {
+      sectionRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  }, [status]);
 
   function validate(): FieldError {
     const e: FieldError = {};
@@ -84,6 +93,7 @@ export default function RegistrationForm() {
   if (status === "success") {
     return (
       <section
+        ref={sectionRef}
         id="register"
         style={{
           background: "linear-gradient(180deg, rgba(22,22,22,0.92) 0%, rgba(14,14,14,0.88) 100%)",
@@ -166,6 +176,7 @@ export default function RegistrationForm() {
 
   return (
     <section
+      ref={sectionRef}
       id="register"
       style={{
         background: "linear-gradient(180deg, rgba(22,22,22,0.92) 0%, rgba(14,14,14,0.88) 100%)",
