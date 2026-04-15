@@ -304,7 +304,7 @@ export default function RegistrationForm() {
               value={form.firstName}
               onChange={(v) => set("firstName", v)}
               error={errors.firstName}
-              placeholder="Anna"
+              placeholder="Ditt förnamn"
             />
             <Field
               label="Efternamn *"
@@ -312,7 +312,7 @@ export default function RegistrationForm() {
               value={form.lastName}
               onChange={(v) => set("lastName", v)}
               error={errors.lastName}
-              placeholder="Svensson"
+              placeholder="Ditt efternamn"
             />
             <Field
               label="E-post *"
@@ -321,7 +321,7 @@ export default function RegistrationForm() {
               value={form.email}
               onChange={(v) => set("email", v)}
               error={errors.email}
-              placeholder="anna@exempel.se"
+              placeholder="dinemail@exempel.se"
             />
             <Field
               label="Telefonnummer"
@@ -329,21 +329,21 @@ export default function RegistrationForm() {
               type="tel"
               value={form.phone}
               onChange={(v) => set("phone", v)}
-              placeholder="+46 70 000 00 00"
+              placeholder="070 000 00 00"
             />
             <Field
               label="Församling / organisation"
               id="organization"
               value={form.organization}
               onChange={(v) => set("organization", v)}
-              placeholder="Din kyrka eller organisation"
+              placeholder="Om du är del av en"
             />
             <Field
               label="Stad"
               id="city"
               value={form.city}
               onChange={(v) => set("city", v)}
-              placeholder="Stockholm"
+              placeholder="Vilken stad/ort kommer du ifrån?"
             />
           </div>
 

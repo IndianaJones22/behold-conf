@@ -57,7 +57,9 @@ async function sendConfirmationEmail({
         "",
         "Vi ses den 2 maj 2026.",
         "",
-        "BEHOLD",
+        "Ebenezer Haregot",
+        "Ungdoms- & Unga Vuxna-pastor",
+        "Sollentuna Pingst",
       ].join("\n"),
       html: `
         <div style="font-family: Inter, Arial, sans-serif; background: #0d0d0d; color: #f3eff0; padding: 32px;">
@@ -70,6 +72,11 @@ async function sendConfirmationEmail({
               Följ oss gärna på Instagram <strong>@behold.conf</strong> där bland annat schema och annan info kommer att lanseras inför heldagen.
             </p>
             <p style="margin: 24px 0 0; color: #b9b2b4; line-height: 1.7;">Vi ses den 2 maj 2026.</p>
+            <div style="margin-top: 24px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.08); color: #f3eff0; line-height: 1.6;">
+              <p style="margin: 0; font-weight: 700;">Ebenezer Haregot</p>
+              <p style="margin: 0; color: #b9b2b4;">Ungdoms- &amp; Unga Vuxna-pastor</p>
+              <p style="margin: 0; color: #b9b2b4;">Sollentuna Pingst</p>
+            </div>
           </div>
         </div>
       `,
