@@ -7,6 +7,8 @@ import RegistrationForm from "./components/RegistrationForm";
 import FAQ from "./components/FAQ";
 import Footer from "./components/Footer";
 
+export const dynamic = "force-dynamic";
+
 export default function Home() {
   return (
     <div style={{ position: "relative" }}>
