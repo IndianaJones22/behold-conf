@@ -88,6 +88,7 @@ export default function CheesePage() {
           Kom till <strong style={{ color: "#ffffff" }}>BEHOLD 26</strong> i{" "}
           <strong style={{ color: "#ffffff" }}>Sollentuna Pingst</strong> den{" "}
           <strong style={{ color: "#ffd60a" }}>2 maj</strong> för att claima den.
+          Dagen börjar kl. 13.00 och slutar kl. 22.00.
         </p>
 
         <p
@@ -101,6 +102,18 @@ export default function CheesePage() {
         >
           En heldag som kyrkan hostar med talare, gäster, konserter och food trucks.
           Vi ses där!
+        </p>
+
+        <p
+          style={{
+            margin: "18px auto 0",
+            color: "#ffd60a",
+            fontSize: "0.95rem",
+            lineHeight: 1.7,
+            maxWidth: 520,
+          }}
+        >
+          Cheeseburgaren kan hämtas ut så länge lagret räcker.
         </p>
 
         <div
