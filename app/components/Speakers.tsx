@@ -20,6 +20,14 @@ const speakers = [
       "Daniel kommer från att ha spelat på hög nivå i fotbollsvärlden till att ha blivit en av initiativtagarna bakom Jesus Conference - en av Sveriges största kristna konferenser för unga vuxna - samtidigt som han är med och producerar Jesus Podcast och studerar till pastor på ALT. Han brinner för att se människor hitta sin identitet i Jesus med ett tydligt fokus på att hjälpa unga människor att leva frimodigt och praktiskt i sin tro.",
   },
   {
+    name: "Alina Lyreborg",
+    role: "Talare",
+    image: "/speaker-alina.jpg",
+    color: "#FF3B1F",
+    description:
+      "Alina har ett hjärta för unga människor och jobbar i dagsläget med barn och unga i Avesta Pingst. Hon brinner för att människor ska få möta Jesus, och utöver hennes arbete i församling så har hon även gjort missionsarbete i Tanzania där hon bott i över 1 år.",
+  },
+  {
     name: "Aaron Lindström",
     role: "Talare",
     image: "/speaker-aaron.jpg",
